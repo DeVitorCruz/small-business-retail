@@ -1,0 +1,37 @@
+<div class="register-container">
+    <mat-card>
+        <mat-card-title>Register</mat-card-title>
+        <form (ngSubmit)="register()" action="">
+            
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" [(ngModel)]="name" name="name" id="name" required>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" [(ngModel)]="email" name="email" id="email" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Role</mat-label>
+                <select name="" id="" (change)="whichAuthorityIsSelected()" matNativeControl #dropdown required>
+                    <option *ngFor="let authority of authorities" [value]="authority.id">{{ authority.responsibility }}</option>
+                </select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" [(ngModel)]="password" name="password" id="password" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" [(ngModel)]="passwordConfirmation" name="password_confirmation" id="confirmPassword" required>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Register</button>
+        </form>
+        <button mat-button [routerLink]="['/login']" type="button">Already have an account? Login</button>
+    </mat-card>
+</div>
