@@ -1,0 +1,29 @@
+<mat-toolbar>
+
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  
+  <img src="/assets/logo/multikart.png" alt="Store Logo" class="logo"/>
+  
+  <span class="spacer"></span>
+  
+  <span class="categories">Categories</span>
+  
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="searchProducts()">
+    <mat-icon>search</mat-icon>
+  </button>
+  
+  <button mat-icon-button (click)="changeLanguageCurrency()">
+    <mat-icon>language</mat-icon>
+  </button>
+  
+  <button mat-icon-button (click)="navigateToCart()">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+
+</mat-toolbar>
