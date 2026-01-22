@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../core/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { Credentials } from '../credentials';
 import { MatCardModule } from '@angular/material/card';

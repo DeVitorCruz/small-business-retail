@@ -1,37 +1,41 @@
-<div class="register-container">
-    <mat-card>
-        <mat-card-title>Register</mat-card-title>
-        <form (ngSubmit)="register()" action="">
-            
-            <mat-form-field appearance="fill">
+<div class="form-register">
+    <form (ngSubmit)="register()" action="">
+
+        <div class="credential-content">
+            <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
                 <input matInput type="text" [(ngModel)]="name" name="name" id="name" required>
             </mat-form-field>
-            
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" [(ngModel)]="email" name="email" id="email" required>
             </mat-form-field>
-
-            <mat-form-field appearance="fill">
-                <mat-label>Role</mat-label>
-                <select name="" id="" (change)="whichAuthorityIsSelected()" matNativeControl #dropdown required>
-                    <option *ngFor="let authority of authorities" [value]="authority.id">{{ authority.responsibility }}</option>
-                </select>
-            </mat-form-field>
-
-            <mat-form-field appearance="fill">
+        </div>
+        
+        <div class="password-content">
+            <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
                 <input matInput type="password" [(ngModel)]="password" name="password" id="password" required>
             </mat-form-field>
-
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
                 <mat-label>Confirm Password</mat-label>
-                <input matInput type="password" [(ngModel)]="passwordConfirmation" name="password_confirmation" id="confirmPassword" required>
+                <input matInput type="password" [(ngModel)]="passwordConfirmation" name="password_confirmation"
+                    id="confirmPassword" required>
             </mat-form-field>
+        </div>
 
+        <div class="role-content">
+            <mat-form-field appearance="outline">
+                <mat-label>Role</mat-label>
+                <select name="" id="" (change)="whichAuthorityIsSelected()" matNativeControl #dropdown required>
+                    <option *ngFor="let authority of authorities" [value]="authority.id">{{ authority.responsibility }}
+                    </option>
+                </select>
+            </mat-form-field>
+        </div>
+
+        <div class="button-container">
             <button mat-raised-button color="primary" type="submit">Register</button>
-        </form>
-        <button mat-button [routerLink]="['/login']" type="button">Already have an account? Login</button>
-    </mat-card>
+        </div>
+    </form>
 </div>

@@ -1,0 +1,36 @@
+.full-width {
+    width: 20%;
+    padding: 16px;
+}
+
+.credential-content mat-form-field:last-child {
+    margin-left: 22px;
+}
+
+.password-content mat-form-field:last-child {
+    margin-left: 22px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .credential-content, .password-content, .role-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .credential-content mat-form-field:last-child {
+        margin-left: 0;
+    }
+
+    .password-content mat-form-field:last-child {
+        margin-left: 0;
+    }
+}
+
+
+
