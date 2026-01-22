@@ -1,0 +1,16 @@
+<div class="image-dialog">
+    <mat-dialog-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Image Path</mat-label>
+            <input matInput type="text" [(ngModel)]="data.image.image_path"/>
+        </mat-form-field>        
+        <mat-form-field appearance="fill">
+            <mat-label>Alt Text</mat-label>
+            <input matInput type="text" [(ngModel)]="data.image.alt_text"/>
+        </mat-form-field>        
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button (click)="onCancel()">Cancel</button>  
+        <button mat-button color="primary" (click)="onSave()">Save</button>  
+    </mat-dialog-actions>
+</div>
