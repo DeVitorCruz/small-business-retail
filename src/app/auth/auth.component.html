@@ -1,0 +1,47 @@
+<div class="auth-container">
+    <div class="auth-box">
+        <div class="auth-content">
+            <div class="text-wrapper">
+
+                <div class="icon-wrapper">
+                    <img [src]="['assets/image/png/dashboard.png']" alt="Dashboard Icon" class="icon">
+                </div>
+
+                <h1>{{ isRegister? 'Welcome to Registration' : 'Welcome Back!' }}</h1>            
+                
+                <p *ngIf="activeTextIndex === 0" class="slider-text">{{ isRegister? 'Join our platform to explore amazing features.' : 'Sign in to access your account and manager your profile.' }}</p>
+                <p *ngIf="activeTextIndex === 1" class="slider-text">Access your dashboard to manager tasks efficiently.</p>
+                <p *ngIf="activeTextIndex === 2" class="slider-text">Join our community and explore new opportunities.</p>
+                
+                <div class="button-wrapper">
+                    <button (click)="changeText(0)" [class.active]="activeTextIndex === 0"><mat-icon svgIcon="circle"></mat-icon></button>
+                    <button (click)="changeText(1)" [class.active]="activeTextIndex === 1"><mat-icon svgIcon="circle"></mat-icon></button>
+                    <button (click)="changeText(2)" [class.active]="activeTextIndex === 2"><mat-icon svgIcon="circle"></mat-icon></button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="auth-form">
+            <h2>{{ isRegister? 'Register' : 'Login' }}</h2>
+            <div class="form-content">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="toggle-auth">
+                <p>{{ isRegister ? 'Already have an account?' : "Don't have an account?" }}</p>
+                <button mat-button [routerLink]=" [isRegister? '/auth/login' : '/auth/register']" type="button" (click)="toggleAuth()">{{ isRegister? 'Login' : 'Create an Account' }}</button>
+            </div>
+            <div class="social-media">
+                <p>Or Login up with social platform:</p>
+                <a href="#" mat-icon-button>
+                    <mat-icon>facebook</mat-icon>
+                </a>
+                <a href="#" mat-icon-button>
+                    <mat-icon svgIcon="twitter-icon"></mat-icon>
+                </a>
+                <a href="#" mat-icon-button>
+                    <mat-icon svgIcon="instagram-icon"></mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

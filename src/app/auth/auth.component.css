@@ -1,0 +1,151 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.auth-box {
+    display: flex;
+    width: auto;
+    max-width: 900px;
+    background: white;
+    height: auto;
+    background:white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+}
+
+.auth-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.auth-form {
+    padding: 16px;
+}
+
+.auth-form h2 {
+    margin-bottom: 16px;
+    text-align: center;
+    color: #3f51b5;
+}
+
+.social-media {
+    text-align: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.toggle-auth {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.toggle-auth button {
+    color: #3f51b5;
+}
+
+.slider-text {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+    min-height: 40px; 
+}
+
+.text-wrapper {
+    text-align: center;
+    transform: translateY(25%);
+    padding: 16px;
+}
+
+.icon-wrapper {
+    margin-bottom: 20px;
+}
+
+.icon-wrapper .icon {
+    width: 100px;
+}
+
+.button-wrapper button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.button-wrapper button:hover {
+    color: rgba(0, 0, 0, .7);
+}
+
+.button-wrapper button.active {
+    color: rgba(0, 0, 0, .7); 
+}
+
+.button-wrapper mat-icon {
+    width: 12px;
+    height: 12px;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .auth-box {
+        max-width: 350px;
+    }
+
+    .icon-wrapper .icon {
+        width: 50px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .auth-box {
+        display: block;
+    }
+
+    .auth-container {
+        height: 113vh;
+    }
+
+    .text-wrapper {
+        transform: translateY(10%);
+    }
+}
+
+@media only screen and (max-height: 667px) {
+    .auth-container {
+        height: 155vh;
+    }
+}
+
+@media only screen and (max-height: 740px) and (min-height: 668px) {
+    .auth-container {
+        height: 145vh;
+    }
+}
+
+@media only screen and (max-height: 884px) and (min-height: 741px) {
+    .auth-container {
+        height: 123vh;
+    }
+}
+
+@media only screen and (max-height: 896px) and (min-height: 885px) {
+    .auth-container {
+        height: 120vh;
+    }
+}
+
+@media only screen and (max-height: 932px) and (min-height: 897px) {
+    .auth-container {
+        height: 115vh;
+    }
+}
+
+
+
