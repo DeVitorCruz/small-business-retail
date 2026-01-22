@@ -1,0 +1,25 @@
+.sub-category-container {
+    padding: 20px;
+}
+
+.sub-category-container .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sub-category-container .toolbar .search-bar {
+    width: 30%; 
+}
+
+.sub-category-container .mat-table {
+    width: 100%;
+}
+
+.sub-category-container .mat-table .category-image {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
