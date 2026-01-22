@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../core/services/auth/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import{ MatCardModule } from '@angular/material/card';
 import{ MatFormFieldModule } from '@angular/material/form-field';
@@ -38,7 +38,7 @@ export class LoginComponent {
       next: response => {
         console.log('Login successful:', response);
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['control/dashboard']);
       },
       error: (error) => {
         console.error('Login failed:', error);

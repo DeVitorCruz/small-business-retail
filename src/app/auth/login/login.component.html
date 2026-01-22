@@ -1,19 +1,28 @@
-<div class="login-container">
-    <mat-card>
-        <mat-card-title>Login</mat-card-title>
-        <form [formGroup]="loginForm" (ngSubmit)="login()" action="">
-            <mat-form-field appearance="fill">
+<div class="form-login">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" action="">
+        
+        <div class="credential-content">
+            <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="email" name="email" id="email" required>
             </mat-form-field>
-
-            <mat-form-field appearance="fill">
+        </div>
+        
+        <div class="password-content">
+            <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput type="password" formControlName="password" name="password" id="password" required>
+                <input 
+                    matInput 
+                    type="password" 
+                    formControlName="password" 
+                    name="password" 
+                    id="password" 
+                    required>
             </mat-form-field>
-
+        </div>
+        
+        <div class="button-container">
             <button mat-raised-button type="submit" color="primary">Login</button>
-        </form>
-        <button mat-button type="button" [routerLink]="['/register']">Create an Account</button>
-    </mat-card>
+        </div>
+    </form>
 </div>
