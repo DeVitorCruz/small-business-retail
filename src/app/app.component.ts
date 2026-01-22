@@ -1,38 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from './api.service';
+import { CommonModule } from '@angular/common';
+import { addIcons } from 'ionicons';
+import { callOutline, heartOutline, personOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
-    HttpClientModule
+    CommonModule,
+    RouterOutlet
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   
-  title = 'Small Business';
-  
-  products: any[] = [];
-
-  constructor(private apiService: ApiService) { }
-
-  ngOnInit(): void {
-    // this.loadProducts();
+  constructor() {
+    addIcons({
+      "call-outline": callOutline,
+      "person-outline": personOutline,
+      "heart-outline": heartOutline,
+    });
   }
 
-  loadProducts(): void {
-    this.apiService.getProducts().subscribe(
-      (data) => {
-        this.products = data;
-      },
-      (error) => {
-        console.error(`Error fetching products`, error);
-      } 
-    );
-  }
 }
