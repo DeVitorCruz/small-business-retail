@@ -1,0 +1,49 @@
+.sidenav-container {
+    height: 88vh;
+}
+
+/* .sidebar {
+    width: 250px;
+    transition: transform .3s ease-in-out;
+    transform: translateX(0);
+} */
+
+/* .sidebar.hidden {
+    transform: translateX(-250px);
+} */
+
+mat-sidenav {
+    width: 250px;
+}
+
+mat-nav-list a.active {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.sidebar-menuIton {
+    color: rgba(0, 0, 0, .54);
+}
+
+.standalone-item {
+    padding: 0 24px;
+}
+
+.standalone-item a {
+    color: rgba(0, 0, 0, .54);
+    font-weight: 500;
+    display: flex;
+    justify-content: left;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 12px 0;
+}
+
+.standalone-item .description {
+    padding: 0 0 0 47px;
+    position: relative;
+    transform: translateY(4px);
+}
+
+.standalone-item:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
