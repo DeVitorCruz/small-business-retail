@@ -1,0 +1,60 @@
+<div class="variaton-container">
+
+    <h2>Variation</h2>
+
+    <div class="toolbar">
+        <mat-form-field appearance="outline" class="search-bar">
+            <mat-label>Search by Sub Category</mat-label>
+            <input matInput type="text" name="" id="" placeholder="Search by name..." [(ngModel)]="searchTerm">
+            <button mat-icon-button matSuffix color="primary" (click)="onSearch()">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" [routerLink]="['/control/all-variation-types']">
+            <mat-icon>add</mat-icon> Add Type of Variation
+        </button>
+    </div> 
+
+    <mat-toolbar class="variation-header" color="primary">
+        <span class="spacer">Manage SubCategories and Variations</span>
+        <button mat-raised-button color="accent" (click)="openVariationDialog()">Associate Variation</button>
+    </mat-toolbar>
+
+    <table mat-table [dataSource]="this.dataResponse.subCategoriesVariationTypes" matSort class="mat-table mat-elevation-z8">
+        
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>SubCategory</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef>Category</th>
+            <td mat-cell *matCellDef="let element">{{ element.categories.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button (click)="openVariationDialog(element)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- <table mat-table [dataSource]="selectedSubCategoryVariations" matSort>
+        
+        <ng-container matColumnDef="variationType">
+            <th mat-header-cell *matHeaderCellDef>Variation Type</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <tr mat-header-row  *matHeaderRowDef="variationColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: variationColumns;"></tr>
+    </table> -->
+
+</div>
