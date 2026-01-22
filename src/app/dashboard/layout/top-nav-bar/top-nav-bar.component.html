@@ -1,0 +1,40 @@
+<mat-toolbar color="primary" class="navbar">
+    <button mat-icon-button (click)="onToggleSidebar()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="title">Dashboard!</span>
+    <span class="spacer"></span>
+    <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Search</mat-label>
+        <input matInput type="search" />
+    </mat-form-field>
+    <div class="toolbar-container">
+        <button mat-icon-button (click)="togllerFullScreen()"><mat-icon>fullscreen</mat-icon></button>
+        <button mat-icon-button (click)="toggleLanguage()"><mat-icon>language</mat-icon></button>
+        <button mat-icon-button><mat-icon>notifications</mat-icon></button>
+        <button mat-icon-button><mat-icon>chat</mat-icon></button>
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu"><mat-icon>person</mat-icon></button>
+    </div>
+    <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item (click)="navigateTo('edit-profile')">
+            <mat-icon>edit</mat-icon>
+            <span>Edit Profile</span>
+        </button>
+        <button mat-menu-item (click)="navigateTo('inbox')">
+            <mat-icon>mail</mat-icon>
+            <span>Inbox</span>
+        </button>
+        <button mat-menu-item (click)="navigateTo('lock-screen')">
+            <mat-icon>lock</mat-icon>
+            <span>Lock Screen</span>
+        </button>
+        <button mat-menu-item (click)="navigateTo('settings')">
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>
