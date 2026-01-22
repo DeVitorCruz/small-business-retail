@@ -1,0 +1,86 @@
+<div class="product-detail-container mat-elevation-z4">
+
+    <!-- section 1: Image Display -->
+    <mat-card class="image-section">
+            <img class="big-image" [src]="this.selectedImage !==''? this.selectedImage : 'https://via.placeholder.com/500'" [alt]="this.selectedAltText !== ''? this.selectedAltText : 'No text typed'">
+            <div class="small-images">
+                <div *ngIf="this.productView.images && this.productView.images.length; else placeholder">
+                    <img
+                        *ngFor="let image of this.productView.images"
+                        [src]="image.image_path !== ''? image.image_path : 'https://via.placeholder.com/60'"
+                        [alt]="image.alt_text !== ''? image.alt_text : 'Not text typed'"
+                        [class.selected]="image.image_path === this.selectedImage"
+                        (click)="onImageSelect(image.image_path)">
+                </div>
+                <ng-template #placeholder>
+                    <img
+                        src="https://via.placeholder.com/60"
+                        alt="Not text typed"
+                        [class.selected]="imageSelectedText"
+                        (click)="onImageSelect('https://via.placeholder.com/500')">
+                </ng-template>
+            </div>
+    </mat-card> 
+
+    <mat-card class="info-section">
+        <h1 mat-card-title>{{ this.productView.name }}</h1>
+        <mat-divider></mat-divider>
+        <div class="reviews">
+            <mat-icon *ngFor="let star of [].constructor(this.ratingCalculating(this.productView))">star</mat-icon>
+            <mat-icon *ngFor="let star of [].constructor(5 - this.ratingCalculating(this.productView))">star_border</mat-icon>
+        </div>
+        <p class="description">{{ this.productView.description }}</p>
+        <p class="price">Price: ${{ this.productView.price }}</p>
+        <div class="variations">
+
+            <div class="variation-unity">
+                <mat-form-field appearance="outline">
+                    <mat-label>Color</mat-label>
+                    <mat-select [(value)]="selectedVariationColor">
+                        <mat-option *ngFor="let variation of this.productView.sub_categories.variations" [value]="variation">
+                            {{ variation.color }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="variation-unity">
+                <mat-form-field appearance="outline">
+                    <mat-label>Size</mat-label>
+                    <mat-select [(value)]="selectedVariationSize">
+                        <mat-option *ngFor="let variation of this.productView.sub_categories.variations" [value]="variation">
+                            {{ variation.size }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="variation-unity">
+                <mat-form-field appearance="outline">
+                    <mat-label>Gender</mat-label>
+                    <mat-select [(value)]="selectedVariationGender">
+                        <mat-option *ngFor="let variation of this.productView.sub_categories.variations" [value]="variation">
+                            {{ variation.gender }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div class="quantity">
+            <mat-form-field appearance="outline">
+                <mat-label>Quantity</mat-label>
+                <input matInput type="number" min="1" [(ngModel)]="quantity" name="quantity" />
+            </mat-form-field>
+        </div>
+
+        <div class="actions">
+            <button mat-raised-button color="primary" (click)="onEdit()">Edit</button>
+            <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+        </div>
+
+    </mat-card>
+
+
+</div>
